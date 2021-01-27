@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <title>CountDown</title>
+  </head>
+  <body>
+    <main class="content-primary">
+      <section class="countdown">
+        <h1 class="countdown__title">CountDown</h1>
+        <article class="coutdown__inputs">
+          <div class="coutdown__content-input">
+            <label class="countdown__label" for="horas">Horas</label>
+            <input class="countdown__input countdown__horas-js" type="number" />
+          </div>
+          <div class="coutdown__content-input">
+            <label class="countdown__label" for="minutos">Minutos</label>
+            <input
+              class="countdown__input countdown__minutos-js"
+              type="number"
+            />
+          </div>
+          <div class="coutdown__content-input">
+            <label class="countdown__label" for="segundos">Segundos</label>
+            <input
+              class="countdown__input countdown__segundos-js"
+              type="number"
+            />
+          </div>
+        </article>
+        <div class="countdown__buttons">
+          <button class="countdown__button button-stop-js">Stop</button>
+          <button class="countdown__button button-start-js">Start</button>
+          <button class="countdown__button button-reset-js">Reset</button>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="/scripts/script.js"></script>
+</html>
