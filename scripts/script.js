@@ -4,10 +4,17 @@ const buttonReset = document.querySelector('.button-reset-js');
 let horas = document.querySelector('.countdown__horas-js');
 let minutos = document.querySelector('.countdown__minutos-js');
 let segundos = document.querySelector('.countdown__segundos-js');
-
+let resultado = document.querySelector('.finish--active ');
+let buttonInactive = document.querySelector('.finish__button--inactive-js');
+let emptyInputs = document.querySelector('.empty--active');
+let buttonInputs = document.querySelector('.empty__button--inactive-js');
 let temporizador;
 
 buttonStart.addEventListener('click', () => {
+  if (segundos.value == '' && minutos.value == '' && horas.value == '') {
+    emptyInputs.classList.remove('empty--inactive');
+    return console.log('hola');
+  }
   temporizador = setInterval(() => {
     if (segundos.value > 0) {
       --segundos.value;
@@ -25,6 +32,9 @@ buttonStart.addEventListener('click', () => {
     } else if (segundos.value == 0 && minutos.value == 0 && horas.value == 0) {
       console.log(`finish`);
       clearInterval(temporizador);
+      resultado.classList.remove('finish--inactive');
+
+      buttonStart.disabled = false;
     }
   }, 1000);
   buttonStart.disabled = true;
@@ -44,5 +54,14 @@ buttonReset.addEventListener('click', () => {
   minutos.value = '';
   horas.value = '';
   buttonStart.disabled = false;
-  buttonStop.disabled = true;
+  buttonStop.disabled = false;
+});
+
+buttonInactive.addEventListener('click', () => {
+  console.log('hola');
+  resultado.classList.add('finish--inactive');
+});
+
+buttonInputs.addEventListener('click', () => {
+  emptyInputs.classList.add('empty--inactive');
 });
